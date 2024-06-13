@@ -1,0 +1,253 @@
+/* Default Styles */
+.container {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+.header {
+  margin-bottom: 20px;
+  background-color: black;
+  color: white;
+  display: flex;
+  height: 90px;
+  width: 100%;
+  padding: 18px 17px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 20px;
+  position: relative;
+  padding: 20px; /* Add some padding for better spacing */
+  color: black;
+}
+
+.heroText {
+  width: 100%; /* Set width to 100% */
+  max-width: 900px; /* Adjust max-width as needed */
+  text-align: center;
+  font-size: 38px;
+  position: relative;
+  padding: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.heroText p {
+  font-size: 18px;
+  width: 80%;
+  text-align: center;
+  font-weight: 100;
+  color: black;
+}
+
+.mainLineTop {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("/lineTop.png") rgba(255, 255, 255, 0) 50% / contain no-repeat;
+}
+
+.mainLineBottomWrapper {
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.mainLineBottom {
+  width: 100px;
+  height: 100px;
+  background: url("/linebottom.png") rgba(255, 255, 255, 0) 50% / contain no-repeat;
+}
+
+.community {
+  color: #ffcc00;
+  font-weight: 600;
+  line-height: 50px;
+}
+
+.joinButton {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 4px;
+  transition: all 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.joinButton:hover {
+  transform: scale(1.1); /* Increase size on hover */
+}
+
+.heroImage {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 219px;
+  height: 219px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.benefitsSection {
+  text-align: center;
+  padding: 20px; /* Add some padding for better spacing */
+}
+
+.benefitsSection h3 {
+  font-weight: 500;
+  font-size: 25px;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.benefits {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.benefitItem {
+  border: 1px solid #ddd;
+  padding: 40px;
+  width: 20%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  height: 380px;
+  border-radius: 10px;
+  transition: transform 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.benefitItem:hover {
+  transform: scale(1.1); /* Increase size on hover */
+}
+
+
+
+.benefitItem h4 {
+  font-size: large;
+  text-align: start;
+  width: 90%;
+  font-weight: 600;
+  transition: font-size 0.3s ease; /* Add transition for smooth font size change */
+  color: black;
+}
+
+.benefitItem p {
+  font-size: medium;
+  text-align: start;
+  transition: font-size 0.3s ease; /* Add transition for smooth font size change */
+  color: black;
+}
+
+.benefitImage {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  text-align: center;
+  font-size: larger;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  padding: 20px; /* Add some padding for better spacing */
+  font-weight: 500;
+  color: black;
+}
+
+.more {
+  color: #ffcc00;
+}
+
+/* Media Queries for Responsiveness */
+/* Add your media queries here */
+
+
+/* Media Queries for Responsiveness */
+
+/* Small Phones (up to 480px) */
+@media (max-width: 480px) {
+  .heroText {
+    font-size: 24px;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .benefitItem {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Tablets (768px and up) */
+@media (min-width: 768px) {
+  .heroSection {
+    width: 100%;
+  }
+  
+  .heroText {
+    font-size: 32px;
+    padding: 30px;
+  }
+
+  .benefitItem {
+    width: 30%;
+    height: auto;
+  }
+}
+
+/* Phones (up to 767px) */
+@media (max-width: 767px) {
+  .heroText {
+    font-size: 28px;
+    padding: 20px;
+  }
+
+  .benefitItem {
+    width: 100%;
+    height: auto;
+  }
+
+  .mainLineTop, .mainLineBottom {
+    display: none;
+  }
+}
+
+/* Laptops (992px and up) */
+@media (min-width: 992px) {
+  .heroText {
+    font-size: 38px;
+    padding: 50px;
+  }
+}
+
+/* Desktops (1200px and up) */
+@media (min-width: 1200px) {
+  .benefitItem {
+    width: 25%;
+    height: 380px;
+  }
+}
