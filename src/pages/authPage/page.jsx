@@ -31,7 +31,7 @@ const Auth = () => {
         }
 
         try {
-            //changed by krunal from /api/login to /login && port
+            //changed by krunal from /api/register to /login && port
             const response = await fetch("http://localhost:8000/register", {
                 method: "POST",
                 body: JSON.stringify({

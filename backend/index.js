@@ -13,12 +13,11 @@ const url = "mongodb://localhost:27017/myapp";
 
 app.use(
   session({
-    secret: "this_is_key", // Change this to a secure random key
+    secret: "this_is_key",
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: false, // Set this to true if using HTTPS
-      maxAge: 3600000, // Session timeout in milliseconds (1 hour)
+      maxAge: 1000 * 60 * 60,
     },
   })
 );
@@ -74,15 +73,32 @@ app.post("/store", async (req, res) => {
   console.log(id);
   console.log(req.session.user);
   if (req.session.user) {
-    users = req.session.user;
-    const user = await User.findOneAndUpdate(
-      { users },
-      { transactionId: id },
-      { new: true }
-    );
+    try {
+      const user = await User.findOneAndUpdate(
+        { email: req.session.user },
+        { transactionId: id },
+        { new: true }
+      );
+      if (user) {
+        res.send(`Transaction ID updated: ${user.transactionId}`);
+      } else {
+        res.status(404).send("User not found");
+      }
+    } catch (error) {
+      res.status(500).send("Error updating transaction ID");
+    }
   } else {
     res.status(401).send("Unauthorized");
   }
+});
+
+app.get("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.send("Error logging out");
+    }
+    res.send("Logged out successfully");
+  });
 });
 
 const PORT = 8000;

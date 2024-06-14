@@ -16,7 +16,7 @@ const VerifyPayment = () => {
               headers: {
                 'Content-Type': 'application/json',
               },
-              body: JSON.stringify({ data : data }),
+              body: JSON.stringify({ id : data }),
             });
       
             if (!response.ok) {
